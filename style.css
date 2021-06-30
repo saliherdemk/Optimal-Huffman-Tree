@@ -1,0 +1,307 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: lightgrey;
+}
+
+#huffman::-webkit-scrollbar{
+    width: 7px;
+    background-color: lightgray;
+}
+
+#huffman::-webkit-scrollbar-thumb{
+    background-color: gray;
+    border-radius: 5px;
+}
+
+#huffman::-webkit-scrollbar:horizontal{
+    height: 7px;
+}
+
+#huffman::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(83, 82, 82);
+}
+
+.sc::-webkit-scrollbar{
+    width: 7px;
+    background-color: lightgray;
+}
+
+.sc::-webkit-scrollbar-thumb{
+    background-color: gray;
+    border-radius: 5px;
+}
+
+.sc::-webkit-scrollbar:horizontal{
+    height: 7px;
+}
+
+.sc::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(83, 82, 82);
+}
+
+
+
+.boxes{
+    position: absolute;
+    display: block;
+    width: 40%;
+    height: 100%;
+    margin-left: 5%;
+}
+
+#paragraph_text{
+    position: relative;
+    max-width: 90%;
+    max-height: 30%;
+    min-height: 20%;
+    min-width: 400px;
+    border: 2px solid black; 
+    margin-left: 3%;
+    margin-top: 2%;
+    font-size:xx-large;
+    
+}
+
+#binary{
+    position: relative;
+    height: 30%;
+    width: 90%;
+    border: 2px solid black; 
+    margin-left: 3%;
+    overflow: auto;
+    font-size:xx-large;
+    line-height: 1.4;
+    transition: width 0.8s,height 0.5s;
+
+}
+
+
+.digit{
+    position: relative;
+    width: 10%;
+    left: 95%;
+    bottom: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+}
+
+#result{
+    position: relative;
+    width: 10%;
+    left: 95%;
+    display: flex;
+    justify-content:left;
+    align-items:flex-end;
+    font-size: x-large;
+    height: 5px;
+    
+}
+
+#coded{
+    position: relative;
+    height: 30%;
+    width: 90%;
+    border: 2px solid black; 
+    margin-left: 3%;
+    overflow: auto;
+    font-size:xx-large;
+    line-height: 1.4;
+    transition: width 0.8s,height 0.5s;
+
+
+}
+
+#freq{
+    position: absolute;
+    width: 40%;
+    height: 10%;
+    left: 54%;
+    top: 2%;
+    border: 2px solid black; 
+    font-size: large;
+    overflow: auto;
+    line-height: 2;
+    transition: width 0.8s,height 0.5s;
+
+}
+
+#freq_btn{
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    z-index: 1;
+    font-size: large;
+    left: 54%;
+    top: 2%;
+}
+
+#huffman{
+    position: absolute;
+    border: 1px solid black;
+    top: 15%;
+    left: 54%;
+    min-width: 500px;
+    min-height: 600px;
+    width: 40%;
+    height: 80%;
+    display: flex;
+    overflow: auto;
+    
+
+}
+
+svg {
+    position: absolute;
+    width: auto;
+    height: auto;
+}
+
+#bin_click{
+    position: absolute;
+    margin-left: 3%;
+    width: 100px;
+    height: 50px;
+    z-index: 1;
+    font-size: large;
+}
+
+#code_click{
+    position: absolute;
+    margin-left: 3%;
+    width: 100px;
+    height: 50px;
+    z-index: 1;
+    font-size: large;
+}
+
+button{
+    background-color: grey;
+}
+
+.sc{
+    background-color: rgb(255, 255, 255);
+}
+
+.link {
+    fill: none;
+    stroke: black;
+}
+
+@media all and (max-width: 1150px){
+    .boxes{
+        position: absolute;
+        width: 80%;
+        left: 0%;
+        align-items: center;
+    }
+
+    #huffman{
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        top: 120%;
+        left: 10%;
+    }
+
+    #freq{
+        width: 80%;
+        top: 105%;
+        left: 10%;
+        height: 100px;
+    }
+
+    #freq_btn{
+        top: 105%;
+        left: 10%;
+    }
+
+    #paragraph_text{
+        width: 100%;
+    }
+
+}
+
+@media all and (max-width: 800px){
+
+    .digit{
+        position: relative;
+        left: 105%;
+    }
+
+    #result{
+        position: relative;
+        left: 100%;
+    }
+
+    #huffman{
+        left: 5%;
+    }
+    
+    #freq{
+        left: 5%;
+    }
+
+    #freq_btn{
+        left: 5%;
+    }
+
+}
+
+@media all and (max-width: 700px){
+    #text_digit{
+        left: 180%;
+    }
+
+    #binary{
+        width: 165%;
+    }
+
+    #coded{
+        width: 165%;
+    }
+
+    #freq{
+        width: 140%;
+    }
+
+    #encoded_digit{
+        left: 180%;
+    }
+
+    #binary_digit{
+        left: 180%;
+    }
+}
+
+@media all and (max-width: 540px){
+    body{
+        width: 500px;
+    }
+
+
+    .digit{
+        left: 150%;
+    }
+
+    #result{
+        left: 130%;
+        
+    }
+}
+
+@media all and (max-height: 715px) , (max-width:1000px){
+    #huffman{
+        top:150%
+    }
+
+    #freq{
+        top: 120%;
+    }
+
+    #freq_btn{
+        top: 120%;
+    }
+}

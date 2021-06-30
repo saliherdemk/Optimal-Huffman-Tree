@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Optimal-Huffman-Tree</title>
+</head>
+<body>
+    
+
+    <div class="boxes">
+
+        <textarea class="sc" id="paragraph_text" oninput="convert() ,main()" cols="51" rows="15" placeholder="Your Text"></textarea> <div id="text_digit" class="digit">0</div>
+
+        <button id="bin_click">Hide</button>
+        <div class="sc" id="binary"></div> <div id="binary_digit" class="digit">0</div>
+
+        <div id="result">0</div>
+        <button id="code_click">Hide</button>
+        <div class="sc" id="coded"></div> <div id="encoded_digit" class="digit">0</div>
+
+    </div>
+
+    <div class="box graph" id="huffman"></div>
+
+    <button id="freq_btn">Hide</button>
+    <div class="sc" id="freq"></div>
+
+    <script src="./js/index.js"></script>
+    <script src="./js/huffman.js" ></script>
+    <script src="./js/draw.js"></script>
+    <script src="./js/d3js.js"></script>
+</body>
+
+</html>
