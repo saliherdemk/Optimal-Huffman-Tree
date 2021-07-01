@@ -1,7 +1,7 @@
 //Drawn graph from https://github.com/KhaledMohamedP/huffman.git
 
 function drawGraph(HuffmanTable) {
-    console.log(HuffmanTable)
+    //console.log(HuffmanTable)
 
     var list = [].concat(HuffmanTable),
         tableSize = HuffmanTable.length;
