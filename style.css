@@ -274,6 +274,10 @@ button{
     #binary_digit{
         left: 180%;
     }
+
+    #github{
+        display: none;
+    }
 }
 
 @media all and (max-width: 540px){
