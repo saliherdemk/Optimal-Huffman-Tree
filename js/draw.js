@@ -49,7 +49,7 @@ function drawGraph(HuffmanTable) {
         links = tree.links(nodes);
 
     nodes.forEach(function(d) {
-        d.y = d.depth * 90;
+        d.y = d.depth * 70;
     });
 
     var gNode = svg.selectAll("g.node")
