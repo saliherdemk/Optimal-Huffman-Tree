@@ -6,4 +6,4 @@ Optimal Huffman Tree Visualization
 # Non-Optimal-Huffman-Tree
 Non-optimal Huffman Tree Visualization
 
-[Live Demo](https://saliherdemk.github.io/Non-Optimal-Huffman-Tree/) &nbsp;|&nbsp;  [Github](https://github.com/saliherdemk/Non-Optimal-Huffman-Tree)
+[Live Demo](https://saliherdemk.github.io/Non-Optimal-Huffman-Tree/)
