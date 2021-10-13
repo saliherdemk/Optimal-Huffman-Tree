@@ -1,39 +1,43 @@
-function convert(){
+function convert() {
     var value = document.getElementById("paragraph_text").value;
     var output = document.getElementById("binary");
     var total = '';
     var i = 0;
+    var totalDigit = 0;
 
-    for(;i<value.length;i++){
+    for (; i < value.length; i++) {
         var binary = '';
         var characther = value.charCodeAt(i);
 
-        while (characther > 0){
+        while (characther > 0) {
             var mod = characther % 2;
             characther = Math.floor(characther / 2)
             binary = String(mod) + String(binary)
         }
 
-        if(binary.length != 8){
+        while (binary.length != 8) {
             binary = String(0) + String(binary)
+
         }
+
         total += binary + ' ';
+        totalDigit += binary.length
     }
     output.textContent = "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0Binary:  " + total;
     var count = document.getElementById("binary_digit");
-    count.innerHTML =  value.length * 8;
+    count.innerHTML = totalDigit;
 }
 
-function frequance(arr){
+function frequance(arr) {
     var fr = document.getElementById("freq");
     var new_arr = Object.entries(arr);
 
     fr.innerHTML = '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0';
-    for( var q = 0;q< new_arr.length;q++){
+    for (var q = 0; q < new_arr.length; q++) {
         var a = new_arr[q][0];
-        if(a == " "){
+        if (a == " ") {
             a = "Space(SC)";
-        } else if(a == "\n"){
+        } else if (a == "\n") {
             a = "New Line(NL)";
         }
         fr.innerHTML += a + ": " + new_arr[q][1] + " || ";
@@ -41,15 +45,15 @@ function frequance(arr){
     }
 }
 
-function result(){
+function result() {
     var binary_digit = document.getElementById("binary_digit").innerHTML;
     var encoded_digit = document.getElementById("encoded_digit").innerHTML;
     var result = document.getElementById("result");
 
-    var subt = binary_digit - encoded_digit;   
-    if(subt == binary_digit){
+    var subt = binary_digit - encoded_digit;
+    if (subt == binary_digit) {
         result.innerHTML = 0;
-    } else{
+    } else {
         result.innerHTML = ((subt * 100) / binary_digit).toFixed(2) + "%";
 
     }
@@ -57,19 +61,19 @@ function result(){
 
 }
 
-function main(){
+function main() {
     var text = String(document.getElementById("paragraph_text").value);
     var array = {};
     document.getElementById("text_digit").innerHTML = text.length;
-    
-    for(var i = 0;i<text.length;i++){
+
+    for (var i = 0; i < text.length; i++) {
 
         var current = text.charAt(i);
 
-        if(current in array){
+        if (current in array) {
             array[current] = array[current] + 1;
 
-        } else{
+        } else {
             array[current] = 1;
         }
 
@@ -81,27 +85,27 @@ function main(){
     result();
 }
 
-function reset(){
+function reset() {
     location.reload();
 }
 
-function remove(){
+function remove() {
     var coded = document.getElementById("coded");
     coded.innerHTML = "";
     var graph = document.querySelector('svg');
-    if(graph) {graph.parentElement.removeChild(graph)};
+    if (graph) { graph.parentElement.removeChild(graph) };
 
 }
 
 var huffman = document.getElementById("huffman");
-var starty,startx,scrleft,scrtop,isdown;
+var starty, startx, scrleft, scrtop, isdown;
 
-huffman.addEventListener('mousedown',e => MouseDown(e));  
-huffman.addEventListener('mouseup',e => mouseUp(e))
-huffman.addEventListener('mouseleave',e=>mouseLeave(e));
-huffman.addEventListener('mousemove',e=>mouseMove(e));
+huffman.addEventListener('mousedown', e => MouseDown(e));
+huffman.addEventListener('mouseup', e => mouseUp(e))
+huffman.addEventListener('mouseleave', e => mouseLeave(e));
+huffman.addEventListener('mousemove', e => mouseMove(e));
 
-function MouseDown(e){
+function MouseDown(e) {
     isdown = true;
     startx = e.pageX - huffman.offsetLeft;
     starty = e.pageY - huffman.offsetTop;
@@ -109,16 +113,16 @@ function MouseDown(e){
     scrtop = huffman.scrollTop;
 }
 
-function mouseUp(e){
+function mouseUp(e) {
     isdown = false;
 }
 
-function mouseLeave(e){
+function mouseLeave(e) {
     isdown = false;
 }
 
-function mouseMove(e){
-    if(isdown){
+function mouseMove(e) {
+    if (isdown) {
         e.preventDefault();
 
         var y = e.pageY - huffman.offsetTop;
@@ -136,14 +140,14 @@ var dig = document.getElementById("binary_digit");
 var bin = document.getElementById("binary");
 
 
-binary_btn.onclick = function(){
+binary_btn.onclick = function () {
 
-    if(binary_btn.innerHTML == "Show"){
+    if (binary_btn.innerHTML == "Show") {
         var cw = document.documentElement.clientWidth;
-        if(cw < 700) {
+        if (cw < 700) {
             bin.style.width = "165%";
 
-        } else{
+        } else {
             bin.style.width = "90%";
         }
 
@@ -153,7 +157,7 @@ binary_btn.onclick = function(){
         binary_btn.innerHTML = "Hide";
         bin.style.overflow = "auto";
 
-    } else{
+    } else {
         bin.style.height = "45px";
         bin.style.width = "95px";
         bin.style.overflow = "hidden";
@@ -169,15 +173,15 @@ var code_dig = document.getElementById("encoded_digit");
 var res = document.getElementById("result");
 var cod = document.getElementById("coded");
 
-code_btn.onclick = function(){
+code_btn.onclick = function () {
 
-    if(code_btn.innerHTML == "Show"){
+    if (code_btn.innerHTML == "Show") {
         var cw = document.documentElement.clientWidth;
 
-        if(cw < 700) {
+        if (cw < 700) {
             cod.style.width = "165%";
 
-        } else{
+        } else {
             cod.style.width = "90%";
         }
 
@@ -187,7 +191,7 @@ code_btn.onclick = function(){
         res.style.visibility = "visible";
         code_btn.innerHTML = "Hide";
         cod.style.overflow = "auto";
-    } else{
+    } else {
         cod.style.height = "45px";
         cod.style.width = "95px";
         cod.style.overflow = "hidden";
@@ -200,30 +204,30 @@ code_btn.onclick = function(){
 }
 
 var freq_btn = document.getElementById("freq_btn");
-var fr  = document.getElementById("freq");
+var fr = document.getElementById("freq");
 
-freq_btn.onclick = function(){
+freq_btn.onclick = function () {
     var cw = document.documentElement.clientWidth;
 
-    if(freq_btn.innerHTML == "Show"){
-        if( 1150 > cw && cw > 700){
+    if (freq_btn.innerHTML == "Show") {
+        if (1150 > cw && cw > 700) {
             fr.style.width = "80%";
             fr.style.height = "100px";
 
-        } else if(cw < 700){
+        } else if (cw < 700) {
             fr.style.width = "140%";
             fr.style.height = "100px";
         }
-        
-        else{
+
+        else {
             fr.style.width = "40%";
             fr.style.height = "10%";
 
         }
 
-        
+
         freq_btn.innerHTML = "Hide";
-    } else{
+    } else {
         fr.style.width = "75px";
         fr.style.height = "35px";
         freq_btn.innerHTML = "Show";
